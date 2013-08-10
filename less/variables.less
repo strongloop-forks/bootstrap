@@ -6,6 +6,29 @@
 // Global values
 // --------------------------------------------------
 
+// StrongLoop Colors
+// -------------------------
+
+@green-dark: #08592b;
+@green-light: #7dbd33;
+
+@white: #ffffff;
+@grey-light: #dedede;
+@grey-dark: #808080;
+@grey-darker: @white - @grey-light;
+@black: #000000;
+
+@orange-dark: #d4470f;
+@orange-light: #ff7f41;
+
+@teal-dark: #0085a1;
+@teal-light: #00c1d5;
+
+@purple-dark: #470a59;
+@purple-light: #9063cd;
+
+@test-color: #ff00ff;
+
 // Grays
 // -------------------------
 
@@ -15,20 +38,27 @@
 @gray-light:             lighten(#000, 60%);   // #999
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
+// Weights
+// -------------------------
+
+@font-weight-normal: 300;
+@font-weight-medium: 500;
+@font-weight-bold: 700;
+
 // Brand colors
 // -------------------------
 
-@brand-primary:         #428bca;
-@brand-success:         #5cb85c;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
-@brand-info:            #5bc0de;
+@brand-primary:         @green-light;
+@brand-success:         @green-dark;
+@brand-warning:         @orange-light;
+@brand-danger:          @orange-dark;
+@brand-info:            @purple-dark;
 
 // Scaffolding
 // -------------------------
 
-@body-bg:               #fff;
-@text-color:            @gray-dark;
+@body-bg:               @white;
+@text-color:            @grey-dark;
 
 // Links
 // -------------------------
@@ -39,7 +69,7 @@
 // Typography
 // -------------------------
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
@@ -52,7 +82,7 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
 @headings-font-family:    @font-family-base;
-@headings-font-weight:    500;
+@headings-font-weight:    @font-weight-normal;
 @headings-line-height:    1.1;
 
 
@@ -72,9 +102,9 @@
 @line-height-large:              1.33;
 @line-height-small:              1.5;
 
-@border-radius-base:             4px;
-@border-radius-large:            6px;
-@border-radius-small:            3px;
+@border-radius-base:             0px;
+@border-radius-large:            0px;
+@border-radius-small:            0px;
 
 @component-active-bg:            @brand-primary;
 
@@ -98,31 +128,31 @@
 // Buttons
 // -------------------------
 
-@btn-font-weight:                bold;
+@btn-font-weight:                @font-weight-medium;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              @text-color;
+@btn-default-bg:                 @white;
+@btn-default-border:             @grey-light;
 
-@btn-primary-color:              #fff;
+@btn-primary-color:              @white;
 @btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-border:             @body-bg;
 
-@btn-success-color:              #fff;
+@btn-success-color:              @white;
 @btn-success-bg:                 @brand-success;
-@btn-success-border:             darken(@btn-success-bg, 5%);
+@btn-success-border:             @body-bg;
 
-@btn-warning-color:              #fff;
+@btn-warning-color:              @white;
 @btn-warning-bg:                 @brand-warning;
-@btn-warning-border:             darken(@btn-warning-bg, 5%);
+@btn-warning-border:             @body-bg;
 
-@btn-danger-color:               #fff;
+@btn-danger-color:               @white;
 @btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
+@btn-danger-border:              @body-bg;
 
-@btn-info-color:                 #fff;
+@btn-info-color:                 @white;
 @btn-info-bg:                    @brand-info;
-@btn-info-border:                darken(@btn-info-bg, 5%);
+@btn-info-border:                @body-bg;
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -135,7 +165,7 @@
 
 @input-border:                   #ccc;
 @input-border-radius:            @border-radius-base;
-@input-border-focus:             #66afe9;
+@input-border-focus:             @green-light;
 
 @input-color-placeholder:        @gray-light;
 
@@ -223,18 +253,18 @@
 
 // Basics of a navbar
 @navbar-height:                    50px;
-@navbar-color:                     #777;
-@navbar-bg:                        #eee;
+@navbar-color:                     @text-color;
+@navbar-bg:                        @grey-light;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor(@grid-gutter-width / 2);  // ~15px
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 // Navbar links
-@navbar-link-color:                #777;
-@navbar-link-hover-color:          #333;
+@navbar-link-color:                @green-light;
+@navbar-link-hover-color:          @grey-dark;
 @navbar-link-hover-bg:             transparent;
-@navbar-link-active-color:         #555;
-@navbar-link-active-bg:            darken(@navbar-bg, 10%);
+@navbar-link-active-color:         @green-light;
+@navbar-link-active-bg:            @white;
 @navbar-link-disabled-color:       #ccc;
 @navbar-link-disabled-bg:          transparent;
 
@@ -252,34 +282,34 @@
 // Inverted navbar
 //
 // Reset inverted navbar basics
-@navbar-inverse-color:                      @gray-light;
-@navbar-inverse-bg:                         #222;
+@navbar-inverse-color:                      @white;
+@navbar-inverse-bg:                         @green-light;
 
 // Inverted navbar links
-@navbar-inverse-link-color:                 @gray-light;
-@navbar-inverse-link-hover-color:           #fff;
+@navbar-inverse-link-color:                 @white;
+@navbar-inverse-link-hover-color:           @grey-dark;
 @navbar-inverse-link-hover-bg:              transparent;
-@navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
-@navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
-@navbar-inverse-link-disabled-color:        #444;
+@navbar-inverse-link-active-color:          @green-light;
+@navbar-inverse-link-active-bg:             @white;
+@navbar-inverse-link-disabled-color:        @grey-dark;
 @navbar-inverse-link-disabled-bg:           transparent;
 
 // Inverted navbar brand label
 @navbar-inverse-brand-color:                @navbar-inverse-link-color;
-@navbar-inverse-brand-hover-color:          #fff;
-@navbar-inverse-brand-hover-bg:             transparent;
+@navbar-inverse-brand-hover-color:          @navbar-inverse-link-hover-color;
+@navbar-inverse-brand-hover-bg:             @navbar-inverse-link-hover-bg;
 
 // Inverted navbar search
 // Normal navbar needs no special styles or vars
 @navbar-inverse-search-bg:                  lighten(@navbar-inverse-bg, 25%);
-@navbar-inverse-search-bg-focus:            #fff;
+@navbar-inverse-search-bg-focus:            @white;
 @navbar-inverse-search-border:              @navbar-inverse-bg;
-@navbar-inverse-search-placeholder-color:   #ccc;
+@navbar-inverse-search-placeholder-color:   @grey-light;
 
 // Inverted navbar toggle
-@navbar-inverse-toggle-hover-bg:            #333;
-@navbar-inverse-toggle-icon-bar-bg:         #fff;
-@navbar-inverse-toggle-border-color:        #333;
+@navbar-inverse-toggle-hover-bg:            @grey-dark;
+@navbar-inverse-toggle-icon-bar-bg:         @white;
+@navbar-inverse-toggle-border-color:        @grey-dark;
 
 
 // Navs
@@ -329,9 +359,9 @@
 // Jumbotron
 // -------------------------
 
-@jumbotron-bg:                   @gray-lighter;
-@jumbotron-heading-color:        inherit;
-@jumbotron-lead-color:           inherit;
+@jumbotron-bg:                   @green-light;
+@jumbotron-heading-color:        @white;
+@jumbotron-lead-color:           @white;
 
 
 // Form states and alerts
@@ -414,7 +444,7 @@
 // -------------------------
 @alert-padding:               15px;
 @alert-border-radius:         @border-radius-base;
-@alert-link-font-weight:      bold;
+@alert-link-font-weight:      @font-weight-bold;
 
 @alert-bg:                    @state-warning-bg;
 @alert-text:                  @state-warning-text;
@@ -516,7 +546,7 @@
 @badge-active-color:          @link-color;
 @badge-active-bg:             #fff;
 
-@badge-font-weight:           bold;
+@badge-font-weight:           @font-weight-bold;
 @badge-line-height:           1;
 @badge-border-radius:         10px;
 
@@ -547,7 +577,7 @@
 // Close
 // ------------------------
 @close-color:                 #000;
-@close-font-weight:           bold;
+@close-font-weight:           @font-weight-bold;
 @close-text-shadow:           0 1px 0 #fff;
 
 

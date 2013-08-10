@@ -37,9 +37,9 @@
   margin: 2px 0 0; // override default ul
   list-style: none;
   background-color: @dropdown-bg;
-  border: 1px solid @dropdown-fallback-border; // IE8 fallback
-  border: 1px solid @dropdown-border;
-  border-radius: @border-radius-base;
+  // border: 1px solid @dropdown-fallback-border; // IE8 fallback
+  // border: 1px solid @dropdown-border;
+  // border-radius: @border-radius-base;
   .box-shadow(0 6px 12px rgba(0,0,0,.175));
   .background-clip(padding-box);
 
@@ -59,7 +59,7 @@
     display: block;
     padding: 3px 20px;
     clear: both;
-    font-weight: normal;
+    font-weight: @font-weight-normal;
     line-height: @line-height-base;
     color: @dropdown-link-color;
     white-space: nowrap; // prevent links from randomly breaking onto new lines

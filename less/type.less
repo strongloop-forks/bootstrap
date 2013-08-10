@@ -5,14 +5,16 @@
 
 // Body text
 // -------------------------
-
+body {
+  font-weight: @font-weight-normal;
+}
 p {
   margin: 0 0 (@line-height-computed / 2);
 }
 .lead {
   margin-bottom: @line-height-computed;
   font-size: (@font-size-base * 1.15);
-  font-weight: 200;
+  font-weight: @font-weight-normal;
   line-height: 1.4;
 
   @media (min-width: 768px) {
@@ -53,7 +55,6 @@ h1, h2, h3, h4, h5, h6,
   font-weight: @headings-font-weight;
   line-height: @headings-line-height;
   small {
-    font-weight: normal;
     line-height: 1;
     color: @headings-small-color;
   }
@@ -91,7 +92,7 @@ h4 small, .h4 small { font-size: @font-size-base; }
 .page-header {
   padding-bottom: ((@line-height-computed / 2) - 1);
   margin: (@line-height-computed * 2) 0 @line-height-computed;
-  border-bottom: 1px solid @page-header-border-color;
+  border-bottom: 1px dashed @page-header-border-color;
 }
 
 
@@ -136,7 +137,7 @@ dd {
   line-height: @line-height-base;
 }
 dt {
-  font-weight: bold;
+  font-weight: @font-weight-medium;
 }
 dd {
   margin-left: 0; // Undo browser default
@@ -185,7 +186,7 @@ blockquote {
   border-left: 5px solid @blockquote-border-color;
   p {
     font-size: (@font-size-base * 1.25);
-    font-weight: 300;
+    font-weight: @font-weight-normal;
     line-height: 1.25;
   }
   p:last-child {
