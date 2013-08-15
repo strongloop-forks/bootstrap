@@ -381,6 +381,12 @@
         border-color: darken(@border, 12%);
   }
 
+  &:active,
+  &.active {
+    margin-top: 2px;
+    border-bottom: 0;
+  }
+
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
@@ -390,7 +396,7 @@
     &:active,
     &.active {
       background-color: @background;
-          border-color: @border
+          border-color: @border;
     }
   }
 }

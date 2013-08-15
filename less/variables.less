@@ -48,11 +48,11 @@
 // Brand colors
 // -------------------------
 
-@brand-primary:         @green-light;
-@brand-success:         @green-dark;
+@brand-primary:         @green-dark;
+@brand-success:         @green-light;
 @brand-warning:         @orange-light;
 @brand-danger:          @orange-dark;
-@brand-info:            @purple-dark;
+@brand-info:            @teal-dark;
 
 // Scaffolding
 // -------------------------
@@ -132,7 +132,7 @@
 
 @btn-default-color:              @text-color;
 @btn-default-bg:                 @white;
-@btn-default-border:             @grey-light;
+@btn-default-border:             @green-dark;
 
 @btn-primary-color:              @white;
 @btn-primary-bg:                 @brand-primary;
@@ -182,8 +182,8 @@
 // -------------------------
 
 @dropdown-bg:                    #fff;
-@dropdown-border:                rgba(0,0,0,.15);
-@dropdown-fallback-border:       #ccc;
+@dropdown-border:                @grey-light;
+@dropdown-fallback-border:       @grey-light;
 @dropdown-divider-bg:            #e5e5e5;
 
 @dropdown-link-active-color:     #fff;
@@ -254,24 +254,27 @@
 // Basics of a navbar
 @navbar-height:                    50px;
 @navbar-color:                     @text-color;
-@navbar-bg:                        @grey-light;
+@navbar-font-weight:               @font-weight-medium;
+@navbar-bg:                        @white;
 @navbar-border-radius:             @border-radius-base;
+@navbar-border-color:              @grey-light;
 @navbar-padding-horizontal:        floor(@grid-gutter-width / 2);  // ~15px
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 // Navbar links
-@navbar-link-color:                @green-light;
-@navbar-link-hover-color:          @grey-dark;
+@navbar-link-color:                @grey-dark;
+@navbar-link-hover-color:          @green-light;
 @navbar-link-hover-bg:             transparent;
-@navbar-link-active-color:         @green-light;
+@navbar-link-active-color:         @black;
 @navbar-link-active-bg:            @white;
-@navbar-link-disabled-color:       #ccc;
+@navbar-link-active-border-color:  @green-light;
+@navbar-link-disabled-color:       multiply(@navbar-bg, @grey-light);
 @navbar-link-disabled-bg:          transparent;
 
 // Navbar brand label
 @navbar-brand-color:               @navbar-link-color;
-@navbar-brand-hover-color:         darken(@navbar-link-color, 10%);
-@navbar-brand-hover-bg:            transparent;
+@navbar-brand-hover-color:         @navbar-link-hover-color;
+@navbar-brand-hover-bg:            @navbar-link-hover-bg;
 
 // Navbar toggle
 @navbar-toggle-hover-bg:           #ddd;
@@ -283,15 +286,17 @@
 //
 // Reset inverted navbar basics
 @navbar-inverse-color:                      @white;
-@navbar-inverse-bg:                         @green-light;
+@navbar-inverse-bg:                         @brand-primary;
+@navbar-inverse-border-color:               @green-light;
 
 // Inverted navbar links
 @navbar-inverse-link-color:                 @white;
-@navbar-inverse-link-hover-color:           @grey-dark;
+@navbar-inverse-link-hover-color:           @green-light;
 @navbar-inverse-link-hover-bg:              transparent;
-@navbar-inverse-link-active-color:          @green-light;
+@navbar-inverse-link-active-color:          @brand-primary;
 @navbar-inverse-link-active-bg:             @white;
-@navbar-inverse-link-disabled-color:        @grey-dark;
+@navbar-inverse-link-active-border-color:   @grey-light;
+@navbar-inverse-link-disabled-color:        screen(@navbar-inverse-bg, @grey-dark);
 @navbar-inverse-link-disabled-bg:           transparent;
 
 // Inverted navbar brand label
@@ -307,9 +312,9 @@
 @navbar-inverse-search-placeholder-color:   @grey-light;
 
 // Inverted navbar toggle
-@navbar-inverse-toggle-hover-bg:            @grey-dark;
+@navbar-inverse-toggle-hover-bg:            @grey-light;
 @navbar-inverse-toggle-icon-bar-bg:         @white;
-@navbar-inverse-toggle-border-color:        @grey-dark;
+@navbar-inverse-toggle-border-color:        @grey-light;
 
 
 // Navs
@@ -359,9 +364,13 @@
 // Jumbotron
 // -------------------------
 
-@jumbotron-bg:                   @green-light;
-@jumbotron-heading-color:        @white;
-@jumbotron-lead-color:           @white;
+@jumbotron-bg:                         @green-dark;
+@jumbotron-heading-color:              @white;
+@jumbotron-lead-color:                 @white;
+
+@jumbotron-inverse-bg:                 @white;
+@jumbotron-inverse-heading-color:      @green-dark;
+@jumbotron-inverse-lead-color:         @green-dark;
 
 
 // Form states and alerts
@@ -583,8 +592,8 @@
 
 // Code
 // ------------------------
-@code-color:                  #c7254e;
-@code-bg:                     #f9f2f4;
+@code-color:                  @green-dark;
+@code-bg:                     mix(@green-light, #fff, 50%);
 
 @pre-bg:                      #f5f5f5;
 @pre-border-color:            #ccc;
