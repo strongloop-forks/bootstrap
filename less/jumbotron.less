@@ -7,7 +7,7 @@
   padding: 30px;
   margin-bottom: 30px;
   font-size: (@font-size-base * 1.5);
-  font-weight: 200;
+  font-weight: @font-weight-normal;
   line-height: (@line-height-base * 1.5);
   color: @jumbotron-lead-color;
   background-color: @jumbotron-bg;
@@ -25,5 +25,13 @@
     h1 {
       font-size: (@font-size-base * 4.5);
     }
+  }
+}
+
+.jumbotron-inverse {
+  color: @jumbotron-inverse-lead-color;
+  background-color: @jumbotron-inverse-bg;
+  h1 {
+    color: @jumbotron-inverse-heading-color;
   }
 }

@@ -53,7 +53,10 @@ a:focus {
 a:focus {
   .tab-focus();
 }
-
+a:active {
+  position: relative;
+  top: 1px;
+}
 
 // Images
 // -------------------------
@@ -90,7 +93,7 @@ hr {
   margin-top:    @line-height-computed;
   margin-bottom: @line-height-computed;
   border: 0;
-  border-top: 1px solid @hr-border;
+  border-top: 1px dashed @hr-border;
 }
 
 // Only display content to screen readers

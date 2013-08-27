@@ -11,6 +11,7 @@
   padding-right: @navbar-padding-horizontal;
   background-color: @navbar-bg;
   border-radius: @navbar-border-radius;
+  border-bottom: 2px solid @navbar-border-color;
 
   // Prevent floats from breaking the navbar
   .clearfix();
@@ -23,6 +24,7 @@
   margin-bottom: 15px;
 
   > li > a {
+    font-weight: @navbar-font-weight;
     padding-top: ((@navbar-height - @line-height-computed) / 2);
     padding-bottom: ((@navbar-height - @line-height-computed) / 2);
     color: @navbar-link-color;
@@ -40,9 +42,12 @@
     &:focus {
       color: @navbar-link-active-color;
       background-color: @navbar-link-active-bg;
+      margin-bottom: -2px;
+      border-bottom: 2px solid @navbar-link-active-border-color;
     }
   }
-  > .disabled > a {
+  // The li is required here due to a specificity battle with .nav > ...
+  > li.disabled > a {
     &,
     &:hover,
     &:focus {
@@ -133,7 +138,7 @@
   margin-right: auto;
   padding: @navbar-padding-vertical @navbar-padding-horizontal;
   font-size: @font-size-large;
-  font-weight: 500;
+  font-weight: @font-weight-normal;
   line-height: @line-height-computed;
   color: @navbar-brand-color;
   text-align: center;
@@ -235,6 +240,7 @@
 
 .navbar-inverse {
   background-color: @navbar-inverse-bg;
+  border-color: @navbar-inverse-border-color;
 
   .navbar-brand {
     color: @navbar-inverse-brand-color;
@@ -265,9 +271,11 @@
       &:focus {
         color: @navbar-inverse-link-active-color;
         background-color: @navbar-inverse-link-active-bg;
+        border-color: @navbar-inverse-link-active-border-color;
       }
     }
-    > .disabled > a {
+    // The li is required here due to a specificity battle with .nav > ...
+    > li.disabled > a {
       &,
       &:hover,
       &:focus {
